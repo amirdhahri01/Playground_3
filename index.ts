@@ -21,7 +21,7 @@ const addNewPizza = (pizza : Pizza) => {
     menu.push(pizza)
 }
 
-const placeOrder = (pizzaName : string) => {
+const placeOrder = (pizzaName : string) : Order | undefined => {
     const pizza = menu.find((p) => p.name === pizzaName);
     if(!pizza){
         return;
@@ -32,7 +32,7 @@ const placeOrder = (pizzaName : string) => {
     return newOrder;
 }
 
-const completeOrder = (orderID : number) => {
+const completeOrder = (orderID : number) : Order | undefined => {
     const order = orderQueue.find(order => order.id === orderID);
     if(!order){
         return;
