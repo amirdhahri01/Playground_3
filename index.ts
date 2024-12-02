@@ -126,12 +126,19 @@ console.log("Order queue:" , orderQueue);
 //     users.push(user);
 //     return user;
 // }
-const gameScore = [14,21,33,42,59]
-const favoriteThings = ["raindrops on roses" , "whiskers on kittens" , "bright copper kettles" , "warm woolen mittens"]
-const voters = [{name:"Alice" , age:21} , {name:"Amir" , age:21}]
-const getLastItem = <T>(array : T[]) => {
-    return array[array.length - 1]
-}
-console.log(getLastItem(gameScore));
-console.log(getLastItem(favoriteThings));
-console.log(getLastItem(voters));
+// const gameScore = [14,21,33,42,59]
+// const favoriteThings = ["raindrops on roses" , "whiskers on kittens" , "bright copper kettles" , "warm woolen mittens"]
+// const voters = [{name:"Alice" , age:21} , {name:"Amir" , age:21}]
+// const getLastItem = <T>(array : T[]) => {
+//     return array[array.length - 1]
+// }
+// console.log(getLastItem(gameScore));
+// console.log(getLastItem(favoriteThings));
+// console.log(getLastItem(voters));
+
+
+// const getVal = <T>(value : T | number) : T => {
+//     return value;
+// }
+
+// getVal<string>("10");
