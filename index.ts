@@ -90,3 +90,25 @@ console.log("Order queue:" , orderQueue);
 //         throw new TypeError("Parameter `identifier` must be either a string or a number");
 //     }
 // }
+// type User ={
+//     id: number,
+//     username : string,
+//     role: "member" | "contributer" | "admin"
+// }
+// type UserUpdate = Partial<User>
+// const users : User [] = [
+//     {id : 1, username :"Dhahri", role :"admin"},
+//     {id : 2, username :"ada Dhahri", role :"member"},
+//     {id : 3, username :"Amiazdazr Dhahri", role :"contributer"},
+//     {id : 4, username :"Amirazdazdaz Dhahri", role :"member"},
+// ]
+// const updateUser = (id : number , updates : UserUpdate) => {
+//     const userFound = users.find(person => person.id === id);
+//     if(!userFound){
+//         console.log("User not found");
+//         return;
+//     }
+//     Object.assign(userFound , updates);
+// }
+// updateUser(1 , {username:"Amir Dhahri"});
+// updateUser(4 , {role : "contributer"})
