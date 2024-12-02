@@ -81,11 +81,12 @@ console.log("Order queue:" , orderQueue);
 // type UserRole = "Admin" | "Guest" | "Student"
 // let role : UserRole;
 // role = "Student"
-
 // const getPizzaDetail = (identifier : string | number)=>{
 //     if(typeof identifier === "string"){
 //         return menu.find(pizza => pizza.name === identifier);
-//     }else{
+//     }else if(typeof identifier == "number"){
 //         return menu.find(pizza => pizza.id === identifier);
-//     }   
+//     }else{
+//         throw new TypeError("Parameter `identifier` must be either a string or a number");
+//     }
 // }
