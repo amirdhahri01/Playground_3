@@ -1,40 +1,83 @@
-// const menu = [{name:"Margherita" , price:8},
-//               {name:"Pepperoni" , price:10},
-//               {name:"Hawaiian" , price:10},
-//               {name:"Veggie" , price:9}]
+type Pizza = {
+    id : number,
+    name : string,
+    price : number
+}
+type Order = {
+    id : number,
+    pizza : Pizza,
+    status: "ordered" | "completed"
+}
+const menu : Pizza [] =  [{id:1 , name:"Margherita" , price:8},
+                          {id:2 , name:"Pepperoni" , price:10},
+                          {id:3 , name:"Hawaiian" , price:10},
+                          {id:4 , name:"Veggie" , price:9}]
 
-// let cashInRegister = 100
-// let nextOrderId = 1;
-// const orderQueue = []
+let cashInRegister : number = 100
+let nextOrderId : number = 1;
+const orderQueue : Order[] = []
 
-// const addNewPizza = (pizza) => {
-//     menu.push(pizza)
+const addNewPizza = (pizza : Pizza) => {
+    menu.push(pizza)
+}
+
+const placeOrder = (pizzaName : string) => {
+    const pizza = menu.find((p) => p.name === pizzaName);
+    if(!pizza){
+        return;
+    }
+    cashInRegister += pizza.price;
+    const newOrder : Order = {id : nextOrderId++ , pizza , status:"ordered"};
+    orderQueue.push(newOrder)
+    return newOrder;
+}
+
+const completeOrder = (orderID : number) => {
+    const order = orderQueue.find(order => order.id === orderID);
+    if(!order){
+        return;
+    }
+    order.status = "completed"
+    return order
+}
+addNewPizza({id:5 , name:"Chicken Bacon Banch" , price:12})
+addNewPizza({id:6 , name:"BBQ Chicken" , price:12})
+addNewPizza({id:7 , name:"Spicy Sausage" , price:11})
+placeOrder("Chicken Bacon Banch")
+completeOrder(1)
+console.log("Menu:",menu);
+console.log("Cash in register:",cashInRegister);
+console.log("Order queue:" , orderQueue);
+// let myName : string = "Amir Dhahri";
+// type Food = string
+// type Person = {
+//     name : string,
+//     age : number,
+//     isStudent : boolean
 // }
-
-// const placeOrder = (pizzaName) => {
-//     const pizza = menu.find((p) => p.name === pizzaName);
-//     if(!pizza){
-//         return;
-//     }
-//     cashInRegister += pizza.price;
-//     const newOrder = {id : nextOrderId++ , pizza , status:"ordered"};
-//     orderQueue.push(newOrder)
-//     return newOrder;
+// const person : Person = {
+//     name : "Amir Dhahri",
+//     age : 20,
+//     isStudent : true 
 // }
-
-// const completeOrder = (orderID) => {
-//     const order = orderQueue.find(order => order.id === orderID);
-//     if(!order)return;
-//     order.status = "completed"
-//     return order
+// type Person = {
+//     name : string,
+//     age : number ,
+//     isStudent : boolean,
+//     address : [
+//         {
+//             tel : string,
+//             address : string
+//         }
+//     ]
 // }
-
-// addNewPizza({name:"Chicken Bacon Banch" , cost:12})
-// addNewPizza({name:"BBQ Chicken" , cost:12})
-// addNewPizza({name:"Spicy Sausage" , cost:11})
-// placeOrder("Chicken Bacon Banch")
-// completeOrder(1)
-// console.log("Menu:",menu);
-// console.log("Cash in register:",cashInRegister);
-// console.log("Order queue:" , orderQueue);
-
+// const myNam : "AMir" = "AMir";
+// enum Days{
+//     Monday = "Monday",
+//     Tuesday = "Tuesday"
+// }
+// let day = Days.Monday;
+// console.log(day);
+// type UserRole = "Admin" | "Guest" | "Student"
+// let role : UserRole;
+// role = "Student"
