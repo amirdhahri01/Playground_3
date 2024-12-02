@@ -81,3 +81,11 @@ console.log("Order queue:" , orderQueue);
 // type UserRole = "Admin" | "Guest" | "Student"
 // let role : UserRole;
 // role = "Student"
+
+// const getPizzaDetail = (identifier : string | number)=>{
+//     if(typeof identifier === "string"){
+//         return menu.find(pizza => pizza.name === identifier);
+//     }else{
+//         return menu.find(pizza => pizza.id === identifier);
+//     }   
+// }
